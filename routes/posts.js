@@ -14,12 +14,12 @@ router.get('/', async (req, res) => {
 });
 
 // Get a Post
-router.get('/:id', async (req, res) => {
-    const {id} = req.params
+router.get('/:post_id', async (req, res) => {
+    const { post_id } = req.params
     try {
         const post = await pool.query(
-            'SELECT * FROM posts WHERE id = $1',
-            [id]
+            'SELECT * FROM posts WHERE post_id = $1',
+            [post_id]
         );
         res.json(post.rows[0])
     }catch (err){
@@ -30,10 +30,11 @@ router.get('/:id', async (req, res) => {
 // Create a Post
 router.post('/', async (req, res) => {
     try {
-        const { content,title } = req.body;
+        const { date } = new Date();
+        const { content,title,user_id } = req.body;
         const newPost = await pool.query(
-            'INSERT INTO posts (content,title) VALUES ($1,$2) RETURNING *',
-            [content,title]
+            'INSERT INTO posts (content,title,user_id,date) VALUES ($1,$2,$3,$4) RETURNING *',
+            [content,title,user_id,date]
         );
         res.json(newPost.rows[0]);
     }catch (err) {
@@ -42,13 +43,13 @@ router.post('/', async (req, res) => {
 });
 
 // Update a Post
-router.put('/:id', async (req, res) => {
+router.put('/:post_id', async (req, res) => {
     try {
-        const { id } = req.params;
-        const { title,content } = req.body;
+        const { post_id } = req.params;
+        const { title,content,user_id } = req.body;
         const updatePost = await pool.query(
-            'UPDATE posts SET (title,content) = ($1,$2) WHERE id = $3',
-            [title,content,id]
+            'UPDATE posts SET (title,content,user_id) = ($1,$2,$3) WHERE post_id = $4',
+            [title,content,user_id,post_id]
         );
         res.json('Post was updated')
     }catch (err) {
@@ -57,12 +58,12 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete a Post
-router.delete('/:id', async (req, res) => {
+router.delete('/:post_id', async (req, res) => {
     try {
-        const { id } = req.params;
+        const { post_id } = req.params;
         const deletePost = await pool.query(
-            'DELETE FROM posts WHERE id = $1',
-            [id]
+            'DELETE FROM posts WHERE post_id = $1',
+            [post_id]
         );
         res.json('Post was successfully deleted!');
     }catch (err) {
