@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { pool } = require('../dbConfig');
+const replies = require('./replies')
 
 
 // Get All Posts
@@ -30,11 +31,10 @@ router.get('/:post_id', async (req, res) => {
 // Create a Post
 router.post('/', async (req, res) => {
     try {
-        const { date } = new Date();
-        const { content,title,user_id } = req.body;
+        const { content,title,user_id,user_name,date,member_since } = req.body;
         const newPost = await pool.query(
-            'INSERT INTO posts (content,title,user_id,date) VALUES ($1,$2,$3,$4) RETURNING *',
-            [content,title,user_id,date]
+            'INSERT INTO posts (content,title,user_id,user_name,date,member_since) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *',
+            [content,title,user_id,user_name,date,member_since]
         );
         res.json(newPost.rows[0]);
     }catch (err) {
@@ -70,5 +70,7 @@ router.delete('/:post_id', async (req, res) => {
         console.log(err.message);
     }
 });
+
+router.use('/:post_id/replies', replies);
 
 module.exports = router;

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9715552-f0c3-4d99-b835-4c0c51ad4468" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/jwtAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/jwtAuth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/replies.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/replies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -43,7 +45,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603267999072</updated>
-      <workItem from="1603268000162" duration="13266000" />
+      <workItem from="1603268000162" duration="13876000" />
+      <workItem from="1603349356997" duration="1992000" />
+      <workItem from="1603358036884" duration="5845000" />
+      <workItem from="1603381938508" duration="934000" />
+      <workItem from="1603441092930" duration="628000" />
+      <workItem from="1603442009318" duration="2453000" />
+      <workItem from="1603459465068" duration="671000" />
+      <workItem from="1603695787532" duration="2145000" />
+      <workItem from="1603711809459" duration="3936000" />
+      <workItem from="1603787511369" duration="3312000" />
+      <workItem from="1603868235359" duration="2665000" />
+      <workItem from="1604040767860" duration="6894000" />
+      <workItem from="1604302382565" duration="1591000" />
+      <workItem from="1604474074949" duration="13038000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <created>1603274542550</created>
@@ -52,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603274542550</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Some Fixes">
+      <created>1603293236593</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603293236593</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -60,16 +82,30 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First" />
-    <option name="LAST_COMMIT_MESSAGE" value="First" />
+    <MESSAGE value="Some Fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some Fixes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-915" y="329" key="CommitChangelistDialog2" timestamp="1603274534649">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1603441937518">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1080.-185.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1603441937518" />
+    <state x="-915" y="329" key="CommitChangelistDialog2" timestamp="1603293235957">
       <screen x="-1080" y="-185" width="1080" height="1880" />
     </state>
-    <state x="-915" y="329" key="CommitChangelistDialog2/-1080.-185.1080.1880/0.0.1920.1040@-1080.-185.1080.1880" timestamp="1603274534649" />
-    <state x="-948" y="487" key="Vcs.Push.Dialog.v2" timestamp="1603274558688">
+    <state x="-915" y="329" key="CommitChangelistDialog2/-1080.-185.1080.1880/0.0.1920.1040@-1080.-185.1080.1880" timestamp="1603293235957" />
+    <state x="-664" y="310" key="FileChooserDialogImpl" timestamp="1604040793300">
       <screen x="-1080" y="-185" width="1080" height="1880" />
     </state>
-    <state x="-948" y="487" key="Vcs.Push.Dialog.v2/-1080.-185.1080.1880/0.0.1920.1040@-1080.-185.1080.1880" timestamp="1603274558688" />
+    <state x="-664" y="310" key="FileChooserDialogImpl/-1080.-185.1080.1880/0.0.1920.1040@-1080.-185.1080.1880" timestamp="1604040793300" />
+    <state x="740" y="274" key="FileChooserDialogImpl/-1080.-185.1080.1880/0.0.1920.1040@0.0.1920.1040" timestamp="1603441933661" />
+    <state x="-1039" y="399" key="SettingsEditor" timestamp="1604307163552">
+      <screen x="-1080" y="-185" width="1080" height="1880" />
+    </state>
+    <state x="-1039" y="399" key="SettingsEditor/-1080.-185.1080.1880/0.0.1920.1040@-1080.-185.1080.1880" timestamp="1604307163552" />
+    <state x="-948" y="487" key="Vcs.Push.Dialog.v2" timestamp="1603293238347">
+      <screen x="-1080" y="-185" width="1080" height="1880" />
+    </state>
+    <state x="-948" y="487" key="Vcs.Push.Dialog.v2/-1080.-185.1080.1880/0.0.1920.1040@-1080.-185.1080.1880" timestamp="1603293238347" />
   </component>
 </project>

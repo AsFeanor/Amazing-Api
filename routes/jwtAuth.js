@@ -27,8 +27,9 @@ router.post("/register", validInfo, async (req, res) => {
         );
 
         const jwtToken = jwtGenerator(newUser.rows[0].user_id);
+        const member_since= user.rows.map(({member_since}) => ({member_since}));
 
-        return res.json({ jwtToken });
+        return res.json({ jwtToken,member_since });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server error");
@@ -56,7 +57,8 @@ router.post("/login", validInfo, async (req, res) => {
             return res.status(401).json("Invalid Credential");
         }
         const jwtToken = jwtGenerator(user.rows[0].user_id);
-        return res.json({ jwtToken });
+        const member_since= user.rows.map(({member_since}) => ({member_since}));
+        return res.json({ jwtToken, user, member_since });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server error");
@@ -71,5 +73,6 @@ router.post("/verify", authorize, (req, res) => {
         res.status(500).send("Server error");
     }
 });
+
 
 module.exports = router;

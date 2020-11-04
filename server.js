@@ -12,7 +12,6 @@ app.use("/dashboard", require("./routes/dashboard"));
 
 app.use("/posts", require("./routes/posts"));
 
-app.use("/replies", require("./routes/replies"));
 
 app.listen(3000, () => {
     console.log(`Server is starting on port 3000`);
